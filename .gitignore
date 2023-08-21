@@ -1,0 +1,8 @@
+examples/
+final/
+node_modules/
+.parcel-cache/
+dist/
+.vs/
+bin/
+obj/

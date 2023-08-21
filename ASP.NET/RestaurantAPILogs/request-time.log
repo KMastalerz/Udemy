@@ -1,0 +1,8 @@
+2023-05-19 18:07:30.9260||INFO|RestaurantAPI.Middleware.RequestTimeMiddleware|Request [GET] at /api/restaurant/3 took 4991 ms  
+2023-05-20 19:13:16.5587||INFO|RestaurantAPI.Middleware.RequestTimeMiddleware|Request [GET] at /api/restaurant/ took 96762 ms  
+2023-05-20 23:03:58.7759||INFO|RestaurantAPI.Middleware.RequestTimeMiddleware|Request [POST] at /api/restaurant/randomgenerator took 18271 ms  
+2023-05-20 23:07:16.6848||INFO|RestaurantAPI.Middleware.RequestTimeMiddleware|Request [POST] at /api/restaurant/randomgenerator took 51381 ms  
+2023-05-21 18:30:06.0121||INFO|RestaurantAPI.Middleware.RequestTimeMiddleware|Request [GET] at /api/restaurant/ took 10954 ms  
+2023-05-21 18:30:34.1237||INFO|RestaurantAPI.Middleware.RequestTimeMiddleware|Request [GET] at /api/restaurant/ took 4077 ms  
+2023-05-21 19:55:41.0457||INFO|RestaurantAPI.Middleware.RequestTimeMiddleware|Request [GET] at /file took 6846 ms  
+2023-05-24 18:28:58.1548||INFO|RestaurantAPI.Middleware.RequestTimeMiddleware|Request [GET] at /file took 16729 ms  

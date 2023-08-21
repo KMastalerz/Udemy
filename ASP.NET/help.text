@@ -1,0 +1,2 @@
+- we can add secrets to connect to mikr.us etc. (passes and connection strings)
+- adding secrets to yaml as: ${{secrets.SECRET_NAME}}
