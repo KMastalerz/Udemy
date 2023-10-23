@@ -1,0 +1,502 @@
+* {
+    margin:0;
+    padding:0;
+    
+    box-sizing: border-box; /*adds padding to width and height*/
+}
+
+/* PAGE SECTIONS */
+body {
+    font-family: sans-serif;
+    color: 444;
+    border-top: 5px solid #1098ad;
+
+    /* position: relative; */
+}
+
+.container {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    /* position: relative; */
+}
+
+.main-header {
+    background-color: #f7f7f7;
+    /* padding: 20px; */
+    padding: 20px 40px;
+    /* margin-bottom: 60px; */
+    /* height: 80px; */
+}
+
+aside {
+    background-color: #f7f7f7;
+    /* border: 5px solid #1098ab; dotted, solid, dashed, wavy */
+    border-top:5px solid #1098ab;
+    border-bottom: 5px solid #1098ab;
+    padding: 50px 40px;
+}
+
+nav {
+    font-size: 18px;
+    /* text-align: center; */
+}
+
+article{
+    /* margin-bottom: 60px; */
+}
+
+.post-header {
+    margin-bottom: 40px;
+}
+
+/* Universal works on all, not like inheritance like in body*/
+/* universal selectod, sleetcs all */
+/* * { 
+    border-top: 5px solid #444
+} */
+
+/* h1, h2, h3, h4, p, li {
+    font-family: sans-serif;
+    color: #444;
+} */
+
+/* SMALLER ELEMENTS */
+h1, h2, h3 {
+    color: #1098ad;
+}
+
+h1 {
+    /* color: blue; */
+    font-size: 26px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+h2 {
+   font-size: 40px;
+   margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+ul, ol {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    /* display: inline; */
+}
+
+li:last-child{
+    margin-bottom: 0;
+}
+
+
+/* footer p {
+    font-size: 14px;
+} */
+
+/* article header p {
+    font-style: italic;
+} */
+
+#author {
+    font-style: italic;
+    font-size: 18px;
+}
+
+#copyright {
+    font-size: 16px;
+}
+
+.related-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+
+/* .first-li{
+    font-weight: bold;
+} */
+
+/* li:first-child {
+    font-weight: bold;
+} */
+/* missconception: it has to be first child, thats why this doesnt work */
+
+/* article p:first-child {
+    color: red;
+} */
+
+/* article p:last-child {
+    color: red;
+} */
+
+/* li:last-child{
+    font-style: italic;
+} */
+
+/*odd/even etc*/
+
+/* li:nth-child(3) { 
+    color: orangered;
+} */
+
+/* body {
+    color: orangered;
+} */
+
+/*
+    rgb(0,255,255)
+    rgba(0,255,255,0.3)
+    #00ffff
+    #0ff
+    #444
+    rgb(69,69,69)
+    #444444
+    rgb(144,144,144)
+    rgb(183,183,183)
+    #b7b7b7
+*/
+
+/* Styling hyperlinks */
+a:link{
+    color: #1098ad;
+    text-decoration: none;
+}
+
+a:visited{
+    color:#1098ab;
+}
+
+a:hover{
+    color: orangered;
+    font-weight: bold;
+    text-decoration: underline dotted orangered;
+}
+
+a:active {
+    background-color: black;
+    font-style: italic;
+}
+
+.head-img {
+    width: 50px;
+    height: 50px;
+    /* float:left; */
+}
+
+.post-img {
+    width: 100%;
+    height: auto;
+    /* margin:100px; */
+}
+
+nav a:link {
+    /* background-color: orangered;
+    margin: 20px;
+    padding: 20px;
+
+    display: block; */
+    
+    margin-right: 30px;
+    /* margin-top: 10px; */
+    display: inline-block;
+}
+
+nav a:link:last-child{
+    margin-right: 10px;
+}
+
+.btn-like {
+    font-size: 22px;
+    padding: 20px;
+    cursor: pointer;
+
+    /* top: 50px;
+    left: 50px; */
+    position: absolute;
+
+    bottom: 50px;
+    right: 50px;
+}
+
+h1::first-letter {
+    font-style: normal;
+    margin-right: 5px;
+}
+
+h2{
+    position: relative;
+}
+
+/* or before -add something*/
+h2::after { 
+    content: "TOP"; /*mandatory*/
+    background-color: yellow;
+    font-size:16px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #000;
+    display: inline-block;
+    padding: 5px 10px;
+
+    position: absolute;
+
+    top:-15px;
+    right:-25px;
+}
+
+/* p::first-line{
+    color: orangered;
+} */
+
+
+/* ADJECENT SIBLING ELEMENT */
+/* h3 + p::first-line{
+    color: orangered;
+} */
+
+
+
+/* style priorities
+
+1. important!
+2. style in html
+3. id selector (#) - if many than last 
+4. class (.)/ pseudo-class (:) selectors - if many than last 
+5. element (p, div, li, etc.) selectors - if many than last 
+6. universal selector (*)
+*/
+
+/* Resolving conflicts !important*/
+
+/* #copyright {
+    color: red ;
+}
+
+.copyright {
+    color: blue;
+}
+
+.text {
+    color: yellow;
+}
+
+
+footer p  {
+    color: green !important;
+} */
+
+/* FLOATS */
+
+/* h1 {
+    float: left;
+}
+
+nav{
+    float: right;
+} */
+
+/* .clear {
+    clear: both;
+} */
+
+/* .claerfix::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.article {
+    float: left;
+    width: 825px;
+}
+
+.related-posts {
+    float: right;
+    width: 300px;
+}
+
+footer {
+    clear: both;
+} */
+
+
+/* FLEXBOX */
+/* .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.author-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px
+}
+
+.author {
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+
+.related-post {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.related-link:link {
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.related-author{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.full-post {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 0 auto;
+    gap: 75px;
+}
+
+.related-posts {
+    flex: 0 0 300px;
+} */
+
+/*  GRID - SOLUTION 1 */
+/* .main-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+}
+
+.nav {
+    justify-self: end;
+}
+
+.author-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.author {
+    margin-bottom: 0;
+}
+
+.full-post {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    align-items: start;
+    gap: 75px;
+}
+
+.related-post {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+}
+
+.related-author{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.related-link:link {
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    display: block;
+    margin-bottom: 5px;
+} */
+/*  GRID - SOLUTION 2 */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    column-gap: 75px;
+    row-gap: 60px;
+
+    align-items: start;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* Placement */
+    grid-column: 1 / -1;
+}
+
+/* .related-posts {
+    align-self: start;
+} */
+
+footer {
+    grid-column: 1 / -1;
+}
+
+
+.full-post {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    align-items: start;
+    gap: 75px;
+}
+
+.related-post {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+}
+
+.related-author{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.related-link:link {
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    display: block;
+    margin-bottom: 5px;
+}
+
