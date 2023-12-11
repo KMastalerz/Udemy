@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-10">
+        <app-shopping-edit  (clearClicked)="clearList()"
+                            (ingredientAdded)="onIngredientAdded($event)"></app-shopping-edit>
+        <hr>
+        <ul class="list-group"
+            *ngIf="ingredients.length > 0; else addIngredients">
+            <a  class="list-group-item" 
+                style="cursor: pointer"
+                *ngFor="let ingredient of ingredients">
+                {{ ingredient.name }} ({{ ingredient.amount }} {{ ingredient.unit }})
+            </a>
+        </ul>
+        <ng-template #addIngredients>
+            <p>
+                Add some ingredients!
+            </p>
+        </ng-template>
+    </div>
+</div>

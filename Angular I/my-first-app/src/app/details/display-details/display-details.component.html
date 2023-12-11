@@ -1,0 +1,14 @@
+<button class="btn btn-primary"
+        (click)="displayDetails()">Display Details</button>
+<p *ngIf="displayParagraph">'Secret Password = tuna'</p>
+@if (showHistory()) {
+    <!-- @for (log of buttonClicks; track log.id) {
+        <p  [ngStyle]="{backgroundColor: log.id >= 5 ? 'blue' : 'transparent'}"
+            [ngClass]="{'white-text': log.id >= 5}">{{log.id}} - {{ log.timeStamp }}</p>
+      } -->
+    <!-- using ngFor with index -->
+    <p  *ngFor="let logItem of buttonClicks; let i = index"
+        [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+        [ngClass]="{'white-text': i >= 5}">{{i}} - {{ logItem }}</p>
+  }
+

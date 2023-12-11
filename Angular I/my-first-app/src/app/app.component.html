@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <hr>
+        <div class="col-xs-12">
+            <!-- <h3>I'm in the AppComponent!</h3>
+            <hr>
+            <app-servers></app-servers> -->
+            <!-- game app test -->
+            <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <app-odd *ngFor="let number of oddNumbers"
+                     [number]="number"></app-odd>
+        </div>
+        <div class="col-xs-6">
+            <app-even *ngFor="let number of evenNumbers"
+                      [number]="number"></app-even>
+        </div>
+    </div>
+</div>
+
