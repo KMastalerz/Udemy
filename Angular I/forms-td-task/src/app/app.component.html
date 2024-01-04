@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <!-- EMAIL -->
+        <label 
+          class="input-header"
+          for="email">Email</label>
+        <input 
+          type="email"
+          name="email"
+          class="form-control"
+          autocomplete="false"
+          ngModel
+          required
+          email
+          #email="ngModel">
+        <span 
+          *ngIf="!email.valid && email.touched" 
+          class="help-block error-message">Invalid Mail</span>
+
+        <!-- SUBSCRIPTION -->
+        <label 
+          class="input-header"
+          for="subscription">Subscription Type</label>
+        <select 
+          id="subscription"
+          class="form-control"
+          name="subscription"
+          [ngModel]="'pro'">
+          <option value="basic">Basic</option>
+          <option value="advanced">Advanced</option>
+          <option value="pro">Pro</option>
+        </select>
+
+        <!-- PASSWORD -->
+        <label 
+          class="input-header"
+          for="password">Password</label>
+        <input 
+          type="password"
+          name="password"
+          autocomplete="false"
+          class="form-control"
+          minlength="10"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).+$"
+          ngModel
+          required
+          #password="ngModel">
+        <span 
+          *ngIf="!password.valid && password.touched" 
+          class="help-block error-message">Invalid Password 
+          <br>&bull; Min 10 characters
+          <br>&bull; At least 1 upper case letter
+          <br>&bull; At least 1 lower case letter
+          <br>&bull; At least 1 number
+          <br>&bull; At least 1 specal char</span>
+          
+          <button 
+              class="btn btn-primary" 
+              type="submit"
+              [disabled]="!form.valid">Submit</button>
+      </form>
+      <span 
+        *ngIf="!form.valid && form.touched" 
+        class="help-block error-message">Invalid Form</span>
+
+      <!-- Add a Form with the following Inputs (and Validators)
+           1) Mail address (should not be empty and should be an email address)
+           2) A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro")
+              Set "Advanced" as Default
+           3) A Password field (should not be empty)
+           4) A Submit Button
+
+           Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid.
+
+           Upon submitting the form, you should simply print the Value of the Form to the Console.
+           Optionally, display it in your template.
+      -->
+    </div>
+  </div>
+</div>

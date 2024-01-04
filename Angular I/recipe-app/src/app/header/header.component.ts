@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  @Output() featureSelected = new EventEmitter<string>();
+  // //@Output() featureSelected = new EventEmitter<string>();
+  // constructor(private router: Router) {}
 
-
-  onSelect(feature: string) {
-    this.featureSelected.emit(feature);
-  }
+  // onSelect(feature: string) {
+  //   // this.featureSelected.emit(feature);
+  //   this.router.navigate([`/${feature}`]);
+  // }
 }

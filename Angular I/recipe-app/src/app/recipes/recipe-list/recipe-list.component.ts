@@ -1,21 +1,29 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RecipeModel } from '../../models/recipe.model';
+import { RecipeService } from '../../services/recipe.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrl: './recipe-list.component.css'
 })
-export class RecipeListComponent {
-  @Output() recipeSelected = new EventEmitter<RecipeModel>();
+export class RecipeListComponent implements OnInit, OnDestroy{
 
-  recipes: RecipeModel[] = [
-    new RecipeModel('Pizza', 'Classic Cheese Pizza', 'https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*'),
-    new RecipeModel('Another Pizza', 'Classic Cheese Pizza', 'https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*')
-  ];
+  constructor(private recipeServices: RecipeService) {}
 
-  onRecipeSelected(recipe: RecipeModel) {
-    this.recipeSelected.emit(recipe);
+  ngOnInit() {
+    this.recipeSub = this.recipeServices.recipesChanged.subscribe(value=> {
+      this.recipes = value;
+    })
+
+    this.recipes = this.recipeServices.getRecipes();
   }
 
+  ngOnDestroy() {
+    if(this.recipeSub) this.recipeSub.unsubscribe();
+  }
+
+  recipes: RecipeModel[];
+  recipeSub: Subscription;
 }

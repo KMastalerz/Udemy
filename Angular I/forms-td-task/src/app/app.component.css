@@ -1,0 +1,12 @@
+.container, .input-header, .btn {
+    margin-top: 12px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.error-message {
+    font-size: 10px;
+    color: red;
+}
