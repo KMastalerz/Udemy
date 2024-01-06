@@ -20,6 +20,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy  {
   editMode: boolean = false;
 
   ngOnInit(): void {
+    console.log('editing recipes', this.recipeService.getRecipes());
     //load possible units
     this.units = this.shoppingListServices.units;
 
@@ -47,11 +48,11 @@ export class RecipeEditComponent implements OnInit, OnDestroy  {
 
     if(this.editMode) {
       let recipe = this.recipeService.getRecipe(this.id);
-      name = recipe.name;
-      description = recipe.description;
-      imgUrl = recipe.imageUrl;
+      name = recipe ? recipe.name : '';
+      description = recipe ? recipe.description : '';
+      imgUrl = recipe ? recipe.imageUrl : '';
 
-      if(recipe.ingredients){
+      if(recipe && recipe.ingredients){
         for(let ingredient of recipe.ingredients) {
           ingredients.push(
             new FormGroup({

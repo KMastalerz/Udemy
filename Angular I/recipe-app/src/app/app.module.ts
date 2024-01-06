@@ -15,6 +15,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { SelectRecipeComponent } from './recipes/select-recipe/select-recipe.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpReformatterService } from './interceptors/http-reformatter.service';
+import { AuthComponent } from './auth/auth/auth.component';
+import { LoadingSpinnerComponent } from './shared-ui/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +34,17 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     ErrorPageComponent,
     SelectRecipeComponent,
     RecipeEditComponent,
+    AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
+  // {provide: HTTP_INTERCEPTORS, useClass: HttpReformatterService, multi:true}
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -10,6 +10,8 @@ export class RecipeService {
   // recipeSelected = new Subject<RecipeModel>()
   recipesChanged = new Subject<RecipeModel[]>();
 
+  private recipes: RecipeModel[] = [];
+  /*
   private recipes: RecipeModel[] = [
     new RecipeModel(
       'Pizza', 
@@ -23,6 +25,12 @@ export class RecipeService {
       'https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg',
       [new IngredientModel('Flour', 1, 'kg'), new IngredientModel('Tomato', 5, 'qt'), new IngredientModel('Cheese', 500, 'g')])
   ];
+  */
+
+  setRecipes(recipes: RecipeModel[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     // slice is added to only return copy of this object
