@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 
-import { RecipeModel } from '../../models/recipe.model';
-import { ShoppingListService } from '../../services/shopping-list.service';
-import { RecipeService } from '../../services/recipe.service';
+import { RecipeModel } from '../models/recipe.model';
+import { ShoppingListService } from '../../shopping-list/shopping-list.service';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -25,12 +25,6 @@ export class RecipeDetailComponent implements OnInit {
         this.id = params['id'];
       }
     )
-
-    // this.route.params.subscribe(
-    //   (params: Params) => {
-    //     this.id = + params['id'];
-    //   }
-    // )
   }
 
   id: number;
@@ -45,9 +39,4 @@ export class RecipeDetailComponent implements OnInit {
     this.recipeService.deleteRecipe(this.id);
     this.router.navigate(['../']);
   }
-
-  // onRecipeEdit() {
-  //   this.router.navigate(['edit'], {relativeTo: this.route});
-  //   // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
-  // }
 }

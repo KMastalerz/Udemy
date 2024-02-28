@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Params, Router } from '@angular/router';
-import { RecipeModel } from '../../models/recipe.model';
+import { RecipeModel } from '../models/recipe.model';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ShoppingListService } from '../../services/shopping-list.service';
-import { IngredientModel } from '../../models/ingredient.model';
+import { ShoppingListService } from '../../shopping-list/shopping-list.service';
+import { IngredientModel } from '../../shared/models/ingredient.model';
 import { Subscription } from 'rxjs';
-import { RecipeService } from '../../services/recipe.service';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-edit',

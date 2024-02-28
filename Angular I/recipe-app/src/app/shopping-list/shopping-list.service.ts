@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { IngredientModel } from '../models/ingredient.model';
+import { IngredientModel } from '../shared/models/ingredient.model';
 import { Subject } from 'rxjs';
 
 @Injectable({
